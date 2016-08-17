@@ -1,19 +1,17 @@
-{% include 'collection-listing' %}
-
 {% comment %}
-<!-- Alternatively, if not using a snippet, use the code below. 
-To use the code below, get rid of the above 'include', and get rid of the comment tags, and you're in business. -->
-{% paginate collections by 6 %}
-  <h1>Collections</h1>
-  <ul class="grid clearfix">
-  {% for collection in collections %}
-    {% include 'collection-grid-item' with 'three-per-row' %}
-  {% endfor %}
-  </ul>
-  {% if paginate.pages > 1 %}
-  <div id="pagination">
-    {{ paginate | default_pagination }}
-  </div>
-  {% endif %}
-{% endpaginate %}
+  Loop through each collection, except 'frontpage'
 {% endcomment %}
+
+<header class="section-header">
+  <h1 class="section-header__title">{{ 'collections.general.title' | t }}</h1>
+</header>
+
+<div class="grid-uniform">
+  {% for collection in collections %}
+    {% unless collection.handle == 'frontpage' %}
+      {% assign collection_item_width = 'medium-down--one-half large--one-third wide--one-quarter' %}
+      {% assign featured = collection.handle %}
+      {% include 'collection-grid-item' %}
+    {% endunless %}
+  {% endfor %}
+</div>
