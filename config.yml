@@ -1,0 +1,7 @@
+development:
+  theme_id: 122779907
+  access_token: 53735b0b68c00a77ce91bc3445f43d81
+  password: 9dd16faf9e06e7a45f55b420cead0889
+  store: yo-tiny.myshopify.com
+  ignore_files:
+    - config.yml
