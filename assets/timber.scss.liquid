@@ -528,6 +528,10 @@ $use-silent-classes: false;
 $push:               true;
 $pull:               false;
 
+#product-grid {
+	margin: 0 3% 0 1%;
+}
+
 /* Force clearfix on grids */
 .grid,
 .grid-uniform {
@@ -1339,7 +1343,9 @@ label[for] {
 /*================ Horizontal Form ================*/
 form.form-horizontal,
 .form-horizontal {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
+  text-align: right;
+  padding-bottom: 20px;
 
   input[type="text"],
   input[type="search"],
@@ -1643,6 +1649,23 @@ $socialIconFontStack: 'icons';
 }
 
 /*================ Module | Footer ================*/
+#footer-email, #footer-content {
+    width: 80%;
+    border-bottom: 1px dotted black;
+    margin: 0 auto;
+    text-align: center;
+	margin-bottom: 20px;
+}
+
+#footer-content {
+	min-height: 350px;
+}
+.footer-module {
+	text-align: left;
+	float: left;
+	width: 33%;
+}
+
 .site-footer {
   background-color: $colorFooterBg;
   padding-top: $gutter;
@@ -1872,8 +1895,11 @@ $socialIconFontStack: 'icons';
 	max-width: 100%;
     height: auto;
 	*/
-	width: 50%;
-	padding: 2%;
+	width: 49%;
+  }
+  
+  img:nth-child(2) {
+	  margin-left: 2%;
   }
 
   table {
@@ -1909,6 +1935,14 @@ $socialIconFontStack: 'icons';
 
 .section-header__title {
   color: $colorNavText;
+  text-align: center;
+  font-size: .9em;
+}
+
+.section-header__title:after, .section-header__title:before {
+	content: " ........................................................... ";
+    height: 1px;
+    margin: 10px;
 }
 
 .section-header__title--left,
@@ -2020,9 +2054,10 @@ $socialIconFontStack: 'icons';
 .site-header {
   padding: 40px 0;
   background-color: $colorHeader;
+  margin-top: -20px;
 
   @include at-query ($min, $large) {
-    padding: $gutter 0;
+    padding: 0 0 0 0;
 
     .post-large--display-table {
       min-height: 86px;
@@ -2046,8 +2081,10 @@ $socialIconFontStack: 'icons';
 
 .site-header__logo {
   text-align: center;
-  margin: 0 auto;
+  margin: -40px auto;
   max-width: 100%;
+  font-weight: 200;
+  font-size: 2.8em;
 
   a {
     color: $colorNavText;
@@ -2078,7 +2115,7 @@ $socialIconFontStack: 'icons';
 {% unless settings.nav_below_logo or settings.show_header_lines == false %}
   .site-header .grid--full {
     border-bottom: 1px solid $colorBorder;
-    padding-bottom: $gutter;
+    padding-bottom: 0px;
   }
 {% endunless %}
 
@@ -2088,6 +2125,7 @@ $socialIconFontStack: 'icons';
   cursor: default;
   margin: 0 auto;
   text-align: center;
+  text-transform: uppercase;
 
   li {
     margin: 0;
@@ -2433,3 +2471,4 @@ input.cart__quantity-selector {
     width: auto !important;
   }
 }
+

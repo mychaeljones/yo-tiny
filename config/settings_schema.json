@@ -1142,6 +1142,16 @@
         "id": "footer_second_menu",
         "label": "Additional menu"
       },
+	  {
+		  "type": "checkbox",
+		  "id": "footer_third_menu_enable",
+		  "label": "Show third menu *THIS IS CURRENTLY INACTIVE*"
+	  },
+	  {
+		  "type": "link_list",
+		  "id": "footer_third_menu",
+		  "label": "Third menu *THIS IS CURRENTLY INACTIVE*"
+	  },
       {
         "type": "checkbox",
         "id": "footer_social_enable",

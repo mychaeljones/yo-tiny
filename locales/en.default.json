@@ -17,7 +17,7 @@
       "login_form_submit": "Enter",
       "signup_form_heading": "Find out when we open:",
       "signup_form_email_label": "Email",
-      "signup_form_email_placeholder": "Your email",
+      "signup_form_email_placeholder": "Email",
       "signup_form_submit": "Submit",
       "signup_form_success": "We will send you an email right before we open!",
       "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"text-link\">Log in here</a>",
@@ -30,7 +30,7 @@
       "home_link_title": "Back to the frontpage"
     },
     "newsletter_form": {
-      "newsletter_email": "Your email",
+      "newsletter_email": "Email",
       "submit": "Subscribe",
       "confirmation": "Thanks for subscribing"
     },
@@ -233,7 +233,7 @@
   },
   "home_page": {
     "sections": {
-      "frontpage_title": "Featured Items",
+      "frontpage_title": "NEW ARRIVALS",
       "featured_title": "Featured Collections"
     },
     "onboarding": {
@@ -263,13 +263,15 @@
     },
     "footer": {
       "blog_title": "Latest News",
-      "linklist_title": "Quick Links",
+      "linklist_title": "LOOKBOOK",
+      "linklist_title_two": "CUSTOMER SERVICES",	  
       "social_title": "Follow Us",
       "social_platform": "{{ name }} on {{ platform }}",
-      "contact_title": "Contact Us",
-      "newsletter_title": "Newsletter",
+      "contact_title": "VISIT US YO!",
+      "newsletter_title": "JOIN THE EMAIL LIST",
       "newsletter_caption": "Sign up for the latest news, offers and styles",
-      "copyright": "Copyright"
+      "copyright": "Copyright",
+	  "mychael_title": ""
     }
   },
   "products": {

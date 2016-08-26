@@ -62,7 +62,6 @@
     <div class="wrapper">
 
       {% if settings.nav_below_logo %}
-
       <div class="grid--full">
         <div class="grid__item">
           {% if template == 'index' %}
@@ -132,7 +131,7 @@
     </div>
   </header>
 
-  <main class="wrapper main-content" role="main">
+  <main class="main-content" role="main"><!-- deleted class 'wrapper' -->
     <div class="grid">
         <div class="grid__item">
           {{ content_for_layout }}
@@ -145,6 +144,45 @@
     <div class="wrapper">
 
       <div class="grid-uniform">
+		  <div id="footer-email">
+	          {% if settings.footer_newsletter_enable %}
+	              {% include 'newsletter-form' %}
+	              		{% comment %}
+						<h3 class="h4">{{ 'layout.footer.newsletter_title' | t }}</h3>
+				  		<p>{{ 'layout.footer.newsletter_caption' | t }}</p>
+						<h3>{{ 'layout.footer.mychael_title' | t }}</h3>
+						{% endcomment %}
+	              
+	          {% endif %}
+		  </div>
+		  
+		  <div id="footer-content">
+	          {% if settings.footer_contact_enable %}
+	            <div class="footer-module">
+	              <h3 class="h4">{{ 'layout.footer.contact_title' | t }}</h3>
+	              <div class="rte">{{ settings.footer_contact_text }}</div>
+	            </div>
+	          {% endif %}
+		  
+	          {% if settings.footer_quicklinks_enable %}
+	            <div class="footer-module">
+	              {% unless num_footer_columns == 1 %}
+	              <h3 class="h4">
+	  				{{ 'layout.footer.linklist_title' | t }}
+	  				<br/>
+	  				{{ 'layout.footer.linklist_title_two' | t }}
+	  			</h3>
+	              {% endunless %}
+	              <ul class="site-footer__links{% if num_footer_columns == 1 %} inline-list{% endif %}">
+	                {% for link in linklists[settings.footer_quicklinks_linklist].links %}
+	                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+	                {% endfor %}
+	              </ul>
+	            </div>
+	          {% endif %}
+		  </div>
+		  
+		  
 
         {% comment %}
           Calculate the number of footer columns shown
@@ -184,6 +222,8 @@
           {% when 6 %}
             {% assign footer_column_width = 'post-large--one-sixth medium--one-half' %}
         {% endcase %}
+		
+
 
         {% if settings.footer_blog_enable %}
           <div class="grid__item {{ footer_column_width }} site-footer__links">
@@ -204,18 +244,7 @@
           </div>
         {% endif %}
 
-        {% if settings.footer_quicklinks_enable %}
-          <div class="grid__item {{ footer_column_width }}">
-            {% unless num_footer_columns == 1 %}
-            <h3 class="h4">{{ 'layout.footer.linklist_title' | t }}</h3>
-            {% endunless %}
-            <ul class="site-footer__links{% if num_footer_columns == 1 %} inline-list{% endif %}">
-              {% for link in linklists[settings.footer_quicklinks_linklist].links %}
-                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
+        
 
         {% if settings.footer_second_menu_enable %}
           <div class="grid__item {{ footer_column_width }}">
@@ -238,20 +267,18 @@
           </div>
         {% endif %}
 
-        {% if settings.footer_contact_enable %}
-          <div class="grid__item {{ footer_column_width }}">
-            <h3 class="h4">{{ 'layout.footer.contact_title' | t }}</h3>
-            <div class="rte">{{ settings.footer_contact_text }}</div>
-          </div>
-        {% endif %}
 
+
+	{% comment %}
         {% if settings.footer_newsletter_enable %}
           <div class="grid__item {{ footer_column_width }}">
             <h3 class="h4">{{ 'layout.footer.newsletter_title' | t }}</h3>
             <p>{{ 'layout.footer.newsletter_caption' | t }}</p>
             {% include 'newsletter-form' %}
+			<h3>holla back yo</h3>
           </div>
         {% endif %}
+	{% endcomment %}
       </div>
 
       <hr class="hr--small hr--clear">
