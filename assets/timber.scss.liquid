@@ -1658,12 +1658,16 @@ $socialIconFontStack: 'icons';
 }
 
 #footer-content {
-	min-height: 350px;
+	min-height: 130px;
 }
 .footer-module {
 	text-align: left;
 	float: left;
 	width: 33%;
+}
+
+.footer-module:nth-child(2) {
+	width: 66%;
 }
 
 .site-footer {
@@ -1710,7 +1714,7 @@ $socialIconFontStack: 'icons';
   }
 }
 
-.site-footer__links {
+.site-footer__links {  	
   a {
     color: $colorFooterText;
 
@@ -1724,6 +1728,10 @@ $socialIconFontStack: 'icons';
     padding: 0 10px;
   }
 
+}
+
+.copyright {
+	text-align: right;
 }
 /*================ Module | Notes and Form Feedback ================*/
 .note,
