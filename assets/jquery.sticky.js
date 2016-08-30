@@ -90,8 +90,8 @@
               .css('width', newWidth)
               .css('position', 'fixed')
               .css('top', newTop)
-              .css('z-index', s.zIndex);
-
+			.css('z-index', s.zIndex);
+			  
             s.stickyElement.parent().addClass(s.className);
 
             if (s.currentTop === null) {

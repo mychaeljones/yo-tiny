@@ -11,6 +11,9 @@
           <a href="{{ settings[slide_link] }}" class="slide-link">
             {{ slide_img | asset_url | img_tag: settings[slide_alt] }}
           </a>
+		    {% if settings[slide_alt] != empty %}
+		      <h1>{{ settings[slide_alt] }}</h1>
+			{% endif %}
         </li>
       {% endif %}
     {% endfor %}

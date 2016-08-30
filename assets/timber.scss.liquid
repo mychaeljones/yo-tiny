@@ -321,7 +321,7 @@ hr {
   height: 0;
 
   &.hr--small {
-    margin: ($gutter / 2) 0;
+    margin: 1% 0; /* ($gutter / 2) 0; */
   }
 
   &.hr--clear {
@@ -1891,11 +1891,9 @@ $socialIconFontStack: 'icons';
   }
 
   img {
-    /*
 	max-width: 100%;
     height: auto;
-	*/
-	width: 49%;
+	/* width: 49%; */
   }
   
   img:nth-child(2) {
@@ -1940,7 +1938,7 @@ $socialIconFontStack: 'icons';
 }
 
 .section-header__title:after, .section-header__title:before {
-	content: " ........................................................... ";
+	content: " ... ";
     height: 1px;
     margin: 10px;
 }
@@ -2052,9 +2050,9 @@ $socialIconFontStack: 'icons';
 
 /*================ Module | Site Header ================*/
 .site-header {
-  padding: 40px 0;
+  padding: 20px 0; /* instead of 40 */
   background-color: white; /* $colorHeader; */
-  margin-top: -20px;
+  margin-top: -23px; /* was -20 */
 
   @include at-query ($min, $large) {
     padding: 0 0 0 0;

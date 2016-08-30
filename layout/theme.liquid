@@ -56,7 +56,8 @@
   {{ 'jquery.sticky.js' | asset_url | script_tag }}
   <script>
     $(document).ready(function(){
-      $(".site-header").sticky({topSpacing:20});
+      	$(".site-header").sticky({topSpacing:60});
+      	$(".header-bar").sticky({topSpacing:0});
     });
   </script>
 </head>
@@ -65,7 +66,7 @@
 
   {% include 'header-bar' %}
 
-  <header class="site-header" role="banner">
+  <header id="site-header" class="site-header" role="banner">
     <div class="wrapper">
 
       {% if settings.nav_below_logo %}
